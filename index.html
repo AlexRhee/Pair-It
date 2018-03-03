@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="assets/css/style.css">
 </head>
+
 <body>
+    <form id="input-form">
+        <label for="input">Select Movie</label>
+        <input type="text" id="input">
+        <br>
+
+        <!-- Button triggers new category to be added -->
+        <input id="add" type="submit" value="Movie">
+    </form>
+
+    <form id="input-form2">
+        <label for="input2">Select Beer</label>
+        <input type="text" id="input2">
+        <br>
+
+        <!-- Button triggers new category to be added -->
+        <input id="add2" type="submit" value="Beer">
+    </form>
+
+    <form id="input-form3">
+            <label for="input3">Select Food</label>
+            <input type="text" id="input2">
+            <br>
     
+            <!-- Button triggers new category to be added -->
+            <input id="add3" type="submit" value="Food">
+        </form>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>

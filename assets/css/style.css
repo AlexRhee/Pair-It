@@ -1,0 +1,88 @@
+body {
+	background: url("../images/parrot_background_rotate.jpg");
+	background-size: 100%;
+}
+
+
+
+.col-xs-3 {
+	float: left;
+	height: 200px;
+	margin-left: 5%;
+	text-align: center;
+	border: 1px solid white;
+	box-shadow: 4px 10px 20px 4px rgba(63, 62, 62, 0.315), 4px 4px 20px 0 rgba(0, 0, 0, 0.678);
+	border-radius: 8px;
+	
+
+
+}
+.img-description {
+	float: absolute;
+	visibility: visible;
+	opacity: 0;
+	
+	
+}
+
+#beer:hover .img-description { 
+	visibility: visible;
+	opacity: 1;
+
+	height: 200px;
+	margin-left: 5%;
+	text-align: center;
+	border: 1px solid white;
+	box-shadow: 4px 10px 20px 4px rgba(63, 62, 62, 0.315), 4px 4px 20px 0 rgba(0, 0, 0, 0.678);
+	border-radius: 8px;
+	
+}
+/*.img-wrap {
+	float: relative;
+} */
+	
+
+#beer {
+	margin-left: 10%;
+	background-color: rgb(251, 255, 0);
+}
+#movie{
+	background-color: rgb(0, 174, 255);
+}
+#food{
+	background-color: rgb(255, 0, 191);
+}
+
+
+
+.btn {
+    margin: 3px;
+    background-color: #999999;
+    border-color: #fff;
+}
+.gifDiv{
+    float: left;
+    margin: 3px;
+}
+.container {
+
+	padding: 20px;
+}
+.jumbotron {
+    background-color: inherit;
+}
+.jumbotron .h1, .jumbotron h1 {
+    text-align: center;
+}
+.h3 {
+	size: 8px;
+}
+#footer {
+	clear: both;
+	margin-top: 40px;
+	position: center;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	color: white;
+}

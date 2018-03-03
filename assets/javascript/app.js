@@ -1,17 +1,17 @@
 
 // search by movie
-$("#add").on("click", function () {
+$("#submitMovie").on("click", function () {
 
     event.preventDefault();
 
     //clear any previous searches
     document.getElementById("input-form2").reset();
     document.getElementById("input-form3").reset();
-    $("#movie-input").empty();
-    $("#beer-input").empty();
-    $("#food-input").empty();
+    $("#movie-view").empty();
+    $("#beer-view").empty();
+    $("#food-view").empty();
 
-    var movie = $("#input").val().trim();
+    var movie = $("#movie-input").val().trim();
 
     var queryMovie = "https://omdbapi.com/?apikey=trilogy&t=" + movie;
 
@@ -38,7 +38,7 @@ $("#add").on("click", function () {
         $(movieDiv).append("<div>" + title + "</div>");
         $(movieDiv).append("<div>" + actors + "</div>");
         $(movieDiv).append("<div>" + plot + "</div>");
-        $("#movie-input").append(movieDiv);
+        $("#movie-view").append(movieDiv);
 
         console.log(ratingNumber);
 
@@ -73,14 +73,14 @@ $("#add").on("click", function () {
             $(beerDiv).append("<div>" + beerName + "</div>");
             $(beerDiv).append("<div>" + beerTag + "</div>");
             $(beerDiv).append("<div>" + beerDescription + "</div>");
-            $("#beer-input").append(beerDiv);
+            $("#beer-view").append(beerDiv);
 
             //display food
             var foodDiv = $("<div>");
             $(foodDiv).append("<div>" + beerFood1 + "</div>");
             $(foodDiv).append("<div>" + beerFood2 + "</div>");
             $(foodDiv).append("<div>" + beerFood3 + "</div>");
-            $("#food-input").append(foodDiv);
+            $("#food-view").append(foodDiv);
 
         })
 
@@ -90,15 +90,15 @@ $("#add").on("click", function () {
 
 
 //search by beer
-$("#add2").on("click", function () {
+$("submitBeer").on("click", function () {
 
     event.preventDefault();
     //clear any previous searches
     document.getElementById("input-form").reset();
     document.getElementById("input-form3").reset();
-    $("#movie-input").empty();
-    $("#beer-input").empty();
-    $("#food-input").empty();
+    $("#movie-view").empty();
+    $("#beer-view").empty();
+    $("#food-view").empty();
 
     var beer = $("#input2").val().trim();
 
@@ -139,14 +139,14 @@ $("#add2").on("click", function () {
         $(beerDiv).append("<div>" + beerName + "</div>");
         $(beerDiv).append("<div>" + beerTag + "</div>");
         $(beerDiv).append("<div>" + beerDescription + "</div>");
-        $("#beer-input").append(beerDiv);
+        $("#beer-view").append(beerDiv);
 
         //display food
         var foodDiv = $("<div>");
         $(foodDiv).append("<div>" + beerFood1 + "</div>");
         $(foodDiv).append("<div>" + beerFood2 + "</div>");
         $(foodDiv).append("<div>" + beerFood3 + "</div>");
-        $("#food-input").append(foodDiv);
+        $("#food-view").append(foodDiv);
 
         //search for popular movies from brew year of the selected beer
         var queryMovieDB = "https://api.themoviedb.org/3/discover/movie?api_key=65e7259520279f0add439f24bca07ecb&sort_by=popularity.desc&primary_release_year=" + year
@@ -186,7 +186,7 @@ $("#add2").on("click", function () {
                 $(movieDiv).append("<div>" + title + "</div>");
                 $(movieDiv).append("<div>" + actors + "</div>");
                 $(movieDiv).append("<div>" + plot + "</div>");
-                $("#movie-input").append(movieDiv);
+                $("#movie-view").append(movieDiv);
 
             })
 
@@ -202,17 +202,17 @@ $("#add2").on("click", function () {
 });
 
 //search by food
-$("#add3").on("click", function () {
+$("submitFood").on("click", function () {
 
     event.preventDefault();
     //clear any previous searches
     document.getElementById("input-form").reset();
     document.getElementById("input-form2").reset();
-    $("#movie-input").empty();
-    $("#beer-input").empty();
-    $("#food-input").empty();
+    $("#movie-view").empty();
+    $("#beer-view").empty();
+    $("#food-view").empty();
 
-    var food = $("#input3").val().trim();
+    var food = $("#food-input").val().trim();
 
     var queryFood = "https://api.punkapi.com/v2/beers?food=" + food;
 
@@ -250,14 +250,14 @@ $("#add3").on("click", function () {
         $(beerDiv).append("<div>" + beerName + "</div>");
         $(beerDiv).append("<div>" + beerTag + "</div>");
         $(beerDiv).append("<div>" + beerDescription + "</div>");
-        $("#beer-input").append(beerDiv);
+        $("#beer-view").append(beerDiv);
 
         //display food
         var foodDiv = $("<div>");
         $(foodDiv).append("<div>" + beerFood1 + "</div>");
         $(foodDiv).append("<div>" + beerFood2 + "</div>");
         $(foodDiv).append("<div>" + beerFood3 + "</div>");
-        $("#food-input").append(foodDiv);
+        $("#food-view").append(foodDiv);
 
         var queryMovieDB = "https://api.themoviedb.org/3/discover/movie?api_key=65e7259520279f0add439f24bca07ecb&sort_by=popularity.desc&primary_release_year=" + year
 
@@ -296,7 +296,7 @@ $("#add3").on("click", function () {
                 $(movieDiv).append("<div>" + title + "</div>");
                 $(movieDiv).append("<div>" + actors + "</div>");
                 $(movieDiv).append("<div>" + plot + "</div>");
-                $("#movie-input").append(movieDiv);
+                $("#movie-view").append(movieDiv);
 
             })
 
@@ -314,12 +314,12 @@ $("#add3").on("click", function () {
 
 //reset search
 $("#reset").on("click", function() {
-    document.getElementById("input-form").reset();
-    document.getElementById("input-form2").reset();
-    document.getElementById("input-form3").reset();
-    $("#movie-input").empty();
-    $("#beer-input").empty();
-    $("#food-input").empty();
+    document.getElementById("beer-input").reset();
+    document.getElementById("movie-input").reset();
+    document.getElementById("food-input").reset();
+    $("#movie-view").empty();
+    $("#beer-view").empty();
+    $("#food-view").empty();
 
 })
 

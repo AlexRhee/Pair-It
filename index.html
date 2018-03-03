@@ -1,53 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
+    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project 1</title>
-    <link href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="assets/css/style.css">
+    <title>Pair it</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
 <body>
-    <form id="input-form">
-        <label for="input">Select Movie</label>
-        <input type="text" id="input">
-        <br>
-
-        <!-- Button triggers new category to be added -->
-        <input id="add" type="submit" value="Movie">
-    </form>
-
-    <form id="input-form2">
-        <label for="input2">Select Beer</label>
-        <input type="text" id="input2">
-        <br>
-
-        <!-- Button triggers new category to be added -->
-        <input id="add2" type="submit" value="Beer">
-    </form>
-
-    <form id="input-form3">
-            <label for="input3">Select Food</label>
-            <input type="text" id="input3">
-            <br>
     
-            <!-- Button triggers new category to be added -->
-            <input id="add3" type="submit" value="Food">
-        </form>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Pair It <p></p>Choose One:</h1>
+        </div>
+    </div>
 
-        <div><button id="reset" value="Reset">Reset</button></div>
+    
+    
+    <div class="container">
+        
+         
+        <div id="beer" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <form id="beer-form" role="form">
+                <h2>Beer</h2>
+                <div class="form-group">
+                    <input type="text" id="beer-input">
+                </div>
+                <input id="submitBeer" type="submit" value="Search a Beer" class="btn btn-primary">
+            </form>
+            <img class="img-description" src="assets/images/parrot1.jpg">
 
-        <div id="movie-input"></div>
-        <div id="beer-input"></div>
-        <div id="food-input"></div>
+            <div class="row">
+                <div id="beer-view"></div>
+            </div>
+        </div>
+
+        
+
+        <div id="movie" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <form id="movie-form" role="form">
+                <h2>Movie</h2>
+                <div class="form-group">
+                    <input type="text" id="movie-input">
+                </div>
+                <input id="submitMovie" type="submit" value="Search a Movie" class="btn btn-primary">
+            </form>    
+            <div class="row">
+                    <div id="movie-view"></div>
+                </div>
+        </div>
+        
+        <div id="food" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <form id="food-form" role="form">
+                <h2>Food</h2>
+                <div class="form-group">
+                    <input type="text" id="food-input">
+                </div>
+                <input id="submitFood" type="submit" value="Search a Food" class="btn btn-primary">
+            </form>    
+            <div class="row">
+                    <div id="food-view"></div>
+                </div>
+        </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/app.js"></script>
+
+    </div>
+
+    <footer>
+        <div id="footer" class="container">
+            <h3>Copyright 2018 - Pair it!</h3>
+        </div>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
 </body>
-
 </html>

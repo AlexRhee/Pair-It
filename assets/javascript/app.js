@@ -4,6 +4,9 @@ $("#add").on("click", function () {
 
     event.preventDefault();
 
+    //clear any previous searches
+    document.getElementById("input-form2").reset();
+    document.getElementById("input-form3").reset();
     $("#movie-input").empty();
     $("#beer-input").empty();
     $("#food-input").empty();
@@ -18,6 +21,7 @@ $("#add").on("click", function () {
     }).then(function (data) {
         console.log(data);
         var rating = data.Ratings[0].Value;
+        // pulls the IMDB rating of the movie
         var rawRating = rating.substring(0, 3);
         var ratingNumber = Math.round(rawRating);
         var title = data.Title;
@@ -37,6 +41,8 @@ $("#add").on("click", function () {
         $("#movie-input").append(movieDiv);
 
         console.log(ratingNumber);
+
+        //using the movie rating from IMDB, searches for beer above the ABV of the movie rating
         var queryBeer = "https://api.punkapi.com/v2/beers?abv_gt=" + ratingNumber;
         $.ajax({
             url: queryBeer,
@@ -87,7 +93,9 @@ $("#add").on("click", function () {
 $("#add2").on("click", function () {
 
     event.preventDefault();
-
+    //clear any previous searches
+    document.getElementById("input-form").reset();
+    document.getElementById("input-form3").reset();
     $("#movie-input").empty();
     $("#beer-input").empty();
     $("#food-input").empty();
@@ -101,6 +109,7 @@ $("#add2").on("click", function () {
         method: "GET"
     }).then(function (response) {
         console.log(response);
+        //pulls a random beer from the beer search results
         var beer = Math.floor(Math.random() * response.length);
         beerChoice = response[beer];
         console.log(beerChoice);
@@ -120,6 +129,7 @@ $("#add2").on("click", function () {
         console.log(beerFood3);
         brewYear = beerChoice.first_brewed;
         console.log(brewYear);
+        //pulls the year the beer was first brewed
         year = brewYear.substring(3, 7);
         console.log(year);
 
@@ -138,6 +148,7 @@ $("#add2").on("click", function () {
         $(foodDiv).append("<div>" + beerFood3 + "</div>");
         $("#food-input").append(foodDiv);
 
+        //search for popular movies from brew year of the selected beer
         var queryMovieDB = "https://api.themoviedb.org/3/discover/movie?api_key=65e7259520279f0add439f24bca07ecb&sort_by=popularity.desc&primary_release_year=" + year
 
         $.ajax({
@@ -145,10 +156,12 @@ $("#add2").on("click", function () {
             method: "GET"
         }).then(function (movData) {
             console.log(movData);
+            //randomly selects one of the top 15 most popular movies from the given year
             var randomNum = Math.floor(Math.random() * 15);
             var movName = movData.results[randomNum].title;
             console.log(movName);
 
+            //uses the movie taken from themoviedb api and searches OMDB
             var queryMovie = "https://omdbapi.com/?apikey=trilogy&t=" + movName;
 
             $.ajax({
@@ -192,7 +205,9 @@ $("#add2").on("click", function () {
 $("#add3").on("click", function () {
 
     event.preventDefault();
-
+    //clear any previous searches
+    document.getElementById("input-form").reset();
+    document.getElementById("input-form2").reset();
     $("#movie-input").empty();
     $("#beer-input").empty();
     $("#food-input").empty();
@@ -225,6 +240,7 @@ $("#add3").on("click", function () {
         console.log(beerFood3);
         brewYear = beerChoice.first_brewed;
         console.log(brewYear);
+        //pulls the year the beer was first brewed
         year = brewYear.substring(3, 7);
         console.log(year);
 
@@ -250,10 +266,12 @@ $("#add3").on("click", function () {
             method: "GET"
         }).then(function (movData) {
             console.log(movData);
+            //randomly selects one of the top 15 most popular movies from the given year
             var randomNum = Math.floor(Math.random() * 15);
             var movName = movData.results[randomNum].title;
             console.log(movName);
 
+            //uses the movie taken from themoviedb api and searches OMDB
             var queryMovie = "https://omdbapi.com/?apikey=trilogy&t=" + movName;
 
             $.ajax({

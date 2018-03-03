@@ -5,8 +5,8 @@ $("#submitMovie").on("click", function () {
     event.preventDefault();
 
     //clear any previous searches
-    document.getElementById("input-form2").reset();
-    document.getElementById("input-form3").reset();
+    document.getElementById("beer-form").reset();
+    document.getElementById("food-form").reset();
     $("#movie-view").empty();
     $("#beer-view").empty();
     $("#food-view").empty();
@@ -90,17 +90,17 @@ $("#submitMovie").on("click", function () {
 
 
 //search by beer
-$("submitBeer").on("click", function () {
+$("#submitBeer").on("click", function () {
 
     event.preventDefault();
     //clear any previous searches
-    document.getElementById("input-form").reset();
-    document.getElementById("input-form3").reset();
+    document.getElementById("beer-form").reset();
+    document.getElementById("food-form").reset();
     $("#movie-view").empty();
     $("#beer-view").empty();
     $("#food-view").empty();
 
-    var beer = $("#input2").val().trim();
+    var beer = $("#beer-input").val().trim();
 
     var queryBeer = "https://api.punkapi.com/v2/beers?beer_name=" + beer;
 
@@ -202,12 +202,12 @@ $("submitBeer").on("click", function () {
 });
 
 //search by food
-$("submitFood").on("click", function () {
+$("#submitFood").on("click", function () {
 
     event.preventDefault();
     //clear any previous searches
-    document.getElementById("input-form").reset();
-    document.getElementById("input-form2").reset();
+    document.getElementById("beer-form").reset();
+    document.getElementById("movie-form").reset();
     $("#movie-view").empty();
     $("#beer-view").empty();
     $("#food-view").empty();

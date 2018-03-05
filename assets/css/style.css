@@ -1,6 +1,7 @@
 body {
     background: url("../images/parrot_background_rotate.jpg");
-    background-size: 100%;
+	background-size: 100%;
+	font-family: 'Magra', sans-serif;
 }
 
 
@@ -45,16 +46,17 @@ body {
     text-align: center;
     border: 1px solid white;
     box-shadow: 4px 10px 20px 4px rgba(63, 62, 62, 0.315), 4px 4px 20px 0 rgba(0, 0, 0, 0.678);
-    border-radius: 8px;
+	border-radius: 8px;
+	overflow: hidden;
         position: absolute;
-        top: 0;
+        top: -150px;
         bottom: 0;
         left: 0;
         right: 0;
         height: 100%;
         width: 100%;
         transition: .5s ease;
-        transform: translate3d(150px, 0px, 0px);
+        transform: translate3d(0px, 150px, 0px);
         
 
 
@@ -69,16 +71,17 @@ body {
         text-align: center;
         border: 1px solid white;
         box-shadow: 4px 10px 20px 4px rgba(63, 62, 62, 0.315), 4px 4px 20px 0 rgba(0, 0, 0, 0.678);
-        border-radius: 8px;
+		border-radius: 8px;
+		overflow: hidden;
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-        
-            transition: .5s ease;
+			top: -150px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			transition: .5s ease;
+			transform: translate3d(0px, 150px, 0px);
             
           }
           #food:hover .img-description { 
@@ -90,16 +93,17 @@ body {
             text-align: center;
             border: 1px solid white;
             box-shadow: 4px 10px 20px 4px rgba(63, 62, 62, 0.315), 4px 4px 20px 0 rgba(0, 0, 0, 0.678);
-            border-radius: 8px;
+			border-radius: 8px;
+			overflow: hidden;
                 position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 100%;
-                width: 100%;
-            
-                transition: .5s ease;
+				top: -150px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 100%;
+				width: 100%;
+				transition: .5s ease;
+				transform: translate3d(0px, 150px, 0px);
                 
               }
       
@@ -152,4 +156,16 @@ body {
     left: 0;
     text-align: center;
     color: white;
+}
+
+.display {
+	margin-top: 15px;
+	border-color: black;
+	padding: 5px;
+
+}
+#img-beer, #img-movie, #img-food {
+	padding: 0px;
+	width: 25%;
+	height: 25%;
 }

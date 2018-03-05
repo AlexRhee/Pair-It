@@ -34,7 +34,7 @@ $("#submitMovie").on("click", function () {
 
         //display movie
         var movieDiv = $("<div>");
-        $(movieDiv).append("<img src='" + poster + "'>");
+        $(movieDiv).append("<img class='img-responsive img' src='" + poster + "'>");
         $(movieDiv).append("<div>" + title + "</div>");
         $(movieDiv).append("<div>" + actors + "</div>");
         $(movieDiv).append("<div>" + plot + "</div>");
@@ -66,21 +66,35 @@ $("#submitMovie").on("click", function () {
             console.log(beerFood1);
             console.log(beerFood2);
             console.log(beerFood3);
+            $.ajax({
+                url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood1,
+                beforeSend: function (xhrObj) {
+                    // Request headers
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                },
+                method: "GET"
+            }).then(function (foodPic) {
+                console.log(foodPic);
+                var foodImage = foodPic.value[0].thumbnailUrl;
+                console.log(foodImage);
+                var foodDiv = $("<div>");
+                $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                $(foodDiv).append("<div>" + beerFood1 + "</div>");
+                $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                $(foodDiv).append("<div>" + beerFood3 + "</div>");
+                $("#food-view").append(foodDiv);
+            });
 
             //display beer
             var beerDiv = $("<div>");
-            $(beerDiv).append("<img src='" + beerImage + "'>");
+            $(beerDiv).append("<img class='img-responsive img' src='" + beerImage + "'>");
             $(beerDiv).append("<div>" + beerName + "</div>");
             $(beerDiv).append("<div>" + beerTag + "</div>");
             $(beerDiv).append("<div>" + beerDescription + "</div>");
             $("#beer-view").append(beerDiv);
 
             //display food
-            var foodDiv = $("<div>");
-            $(foodDiv).append("<div>" + beerFood1 + "</div>");
-            $(foodDiv).append("<div>" + beerFood2 + "</div>");
-            $(foodDiv).append("<div>" + beerFood3 + "</div>");
-            $("#food-view").append(foodDiv);
+
 
         })
 
@@ -94,7 +108,7 @@ $("#submitBeer").on("click", function () {
 
     event.preventDefault();
     //clear any previous searches
-    document.getElementById("beer-form").reset();
+    document.getElementById("movie-form").reset();
     document.getElementById("food-form").reset();
     $("#movie-view").empty();
     $("#beer-view").empty();
@@ -132,21 +146,35 @@ $("#submitBeer").on("click", function () {
         //pulls the year the beer was first brewed
         year = brewYear.substring(3, 7);
         console.log(year);
+        $.ajax({
+            url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood1,
+            beforeSend: function (xhrObj) {
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+            },
+            method: "GET"
+        }).then(function (foodPic) {
+            console.log(foodPic);
+            var foodImage = foodPic.value[0].thumbnailUrl;
+            console.log(foodImage);
+
+            //display food
+            var foodDiv = $("<div>");
+            $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+            $(foodDiv).append("<div>" + beerFood1 + "</div>");
+            $(foodDiv).append("<div>" + beerFood2 + "</div>");
+            $(foodDiv).append("<div>" + beerFood3 + "</div>");
+            $("#food-view").append(foodDiv);
+        });
 
         //display beer
         var beerDiv = $("<div>");
-        $(beerDiv).append("<img src='" + beerImage + "'>");
+        $(beerDiv).append("<img class='img-responsive img' src='" + beerImage + "'>");
         $(beerDiv).append("<div>" + beerName + "</div>");
         $(beerDiv).append("<div>" + beerTag + "</div>");
         $(beerDiv).append("<div>" + beerDescription + "</div>");
         $("#beer-view").append(beerDiv);
 
-        //display food
-        var foodDiv = $("<div>");
-        $(foodDiv).append("<div>" + beerFood1 + "</div>");
-        $(foodDiv).append("<div>" + beerFood2 + "</div>");
-        $(foodDiv).append("<div>" + beerFood3 + "</div>");
-        $("#food-view").append(foodDiv);
 
         //search for popular movies from brew year of the selected beer
         var queryMovieDB = "https://api.themoviedb.org/3/discover/movie?api_key=65e7259520279f0add439f24bca07ecb&sort_by=popularity.desc&primary_release_year=" + year
@@ -182,7 +210,7 @@ $("#submitBeer").on("click", function () {
 
                 //display movie
                 var movieDiv = $("<div>");
-                $(movieDiv).append("<img src='" + poster + "'>");
+                $(movieDiv).append("<img class='img-responsive img' src='" + poster + "'>");
                 $(movieDiv).append("<div>" + title + "</div>");
                 $(movieDiv).append("<div>" + actors + "</div>");
                 $(movieDiv).append("<div>" + plot + "</div>");
@@ -243,21 +271,36 @@ $("#submitFood").on("click", function () {
         //pulls the year the beer was first brewed
         year = brewYear.substring(3, 7);
         console.log(year);
+        $.ajax({
+            url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood1,
+            beforeSend: function (xhrObj) {
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+            },
+            method: "GET"
+        }).then(function (foodPic) {
+            console.log(foodPic);
+            var foodImage = foodPic.value[0].thumbnailUrl;
+            console.log(foodImage);
+
+            //display food
+            var foodDiv = $("<div>");
+            $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+            $(foodDiv).append("<div>" + beerFood1 + "</div>");
+            $(foodDiv).append("<div>" + beerFood2 + "</div>");
+            $(foodDiv).append("<div>" + beerFood3 + "</div>");
+            $("#food-view").append(foodDiv);
+
+        });
 
         //display beer
         var beerDiv = $("<div>");
-        $(beerDiv).append("<img src='" + beerImage + "'>");
+        $(beerDiv).append("<img class='img-responsive img' src='" + beerImage + "'>");
         $(beerDiv).append("<div>" + beerName + "</div>");
         $(beerDiv).append("<div>" + beerTag + "</div>");
         $(beerDiv).append("<div>" + beerDescription + "</div>");
         $("#beer-view").append(beerDiv);
 
-        //display food
-        var foodDiv = $("<div>");
-        $(foodDiv).append("<div>" + beerFood1 + "</div>");
-        $(foodDiv).append("<div>" + beerFood2 + "</div>");
-        $(foodDiv).append("<div>" + beerFood3 + "</div>");
-        $("#food-view").append(foodDiv);
 
         var queryMovieDB = "https://api.themoviedb.org/3/discover/movie?api_key=65e7259520279f0add439f24bca07ecb&sort_by=popularity.desc&primary_release_year=" + year
 
@@ -292,7 +335,7 @@ $("#submitFood").on("click", function () {
 
                 //display movie
                 var movieDiv = $("<div>");
-                $(movieDiv).append("<img src='" + poster + "'>");
+                $(movieDiv).append("<img class='img-responsive img' src='" + poster + "'>");
                 $(movieDiv).append("<div>" + title + "</div>");
                 $(movieDiv).append("<div>" + actors + "</div>");
                 $(movieDiv).append("<div>" + plot + "</div>");
@@ -313,7 +356,7 @@ $("#submitFood").on("click", function () {
 
 
 //reset search
-$("#reset").on("click", function() {
+$("#reset").on("click", function () {
     document.getElementById("beer-input").reset();
     document.getElementById("movie-input").reset();
     document.getElementById("food-input").reset();
@@ -321,7 +364,16 @@ $("#reset").on("click", function() {
     $("#beer-view").empty();
     $("#food-view").empty();
 
-})
+});
+
+function toggleDiv(element) {
+    document.getElementById(element).style.display = 'block';
+    document.getElementById("img-beer").style.display = 'none';
+    document.getElementById("img-movie").style.display = 'none';
+    document.getElementById("img-food").style.display = 'none';
+    
+    };
+    
 
 
 

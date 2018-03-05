@@ -5,17 +5,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script language="JavaScript" type="text/javascript">
-        function toggleDiv(element) {
-            document.getElementById(element).style.display = 'block';
-            document.getElementById("img-beer").style.display = 'none';
-            document.getElementById("img-movie").style.display = 'none';
-            document.getElementById("img-food").style.display = 'none';
-            
-            
-            }
-        
-    </script>
+    <link href="https://fonts.googleapis.com/css?family=Magra" rel="stylesheet">
+
 </head>
 <body>
     <div class="jumbotron">
@@ -25,7 +16,7 @@
         </div>
     </div>
     <div class="container">
-        <div id="beer" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div id="beer" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 searchForm">
             <form id="beer-form" role="form">
                 <h2>Beer</h2>
                 <div id="form-group-beer" style="display: none;">
@@ -35,11 +26,11 @@
                 </div>
             </form>
             <img class="img-description" id="img-beer" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-beer')">
-            <div class="row">
+            <div class="row display">
                 <div id="beer-view"></div>
             </div>
         </div>
-        <div id="movie" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div id="movie" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 searchForm">
             <form id="movie-form" role="form">
                 <h2>Movie</h2>
                 <div id="form-group-movie" style="display: none;">
@@ -49,11 +40,11 @@
                 </div>
             </form>
             <img class="img-description" id="img-movie" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-movie')">
-            <div class="row">
+            <div class="row display">
                 <div id="movie-view"></div>
             </div>
         </div>
-        <div id="food" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div id="food" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 searchForm">
             <form id="food-form" role="form">
                 <h2>Food</h2>
                 <div id="form-group-food" style="display: none;">
@@ -63,7 +54,7 @@
                 </div>
             </form>
             <img class="img-description" id="img-food" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-food')">
-            <div class="row">
+            <div class="row display">
                 <div id="food-view"></div>
             </div>
         </div>

@@ -163,10 +163,21 @@ body {
 	border-color: black;
     padding: 5px;
     height: auto;
+    background-color: lemonchiffon;
 
 }
 #img-beer, #img-movie, #img-food {
 	padding: 0px;
 	width: 25%;
 	height: 25%;
+}
+
+.displayImg {
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.foodImg {
+    height: 110px;
 }

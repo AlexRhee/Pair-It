@@ -35,7 +35,7 @@ $("#submitMovie").on("click", function () {
 
         //display movie
         var movieDiv = $("<div>");
-        $(movieDiv).append("<img class='img-responsive img' src='" + poster + "'>");
+        $(movieDiv).append("<img class='img-responsive img displayImg' src='" + poster + "'>");
         $(movieDiv).append("<div>" + title + "</div>");
         $(movieDiv).append("<div>" + actors + "</div>");
         $(movieDiv).append("<div>" + plot + "</div>");
@@ -88,7 +88,7 @@ $("#submitMovie").on("click", function () {
                 var foodImage = foodPic.value[0].thumbnailUrl;
                 console.log(foodImage);
                 var foodDiv = $("<div>");
-                $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
                 $(foodDiv).append("<div>" + beerFood1 + "</div>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
@@ -102,7 +102,7 @@ $("#submitMovie").on("click", function () {
                     var foodImage = foodPic.value[0].thumbnailUrl;
                     console.log(foodImage);
 
-                    $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                    $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
                     $(foodDiv).append("<div>" + beerFood2 + "</div>");
                     $.ajax({
                         url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
@@ -116,7 +116,7 @@ $("#submitMovie").on("click", function () {
                         var foodImage = foodPic.value[0].thumbnailUrl;
                         console.log(foodImage);
 
-                        $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                        $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
                         $(foodDiv).append("<div>" + beerFood3 + "</div>");
                         $("#food-view").append(foodDiv);
                     });
@@ -125,7 +125,7 @@ $("#submitMovie").on("click", function () {
 
                 //display beer
                 var beerDiv = $("<div>");
-                $(beerDiv).append("<img class='img-responsive img' src='" + beerImage + "'>");
+                $(beerDiv).append("<img class='img-responsive img displayImg' src='" + beerImage + "'>");
                 $(beerDiv).append("<div>" + beerName + "</div>");
                 $(beerDiv).append("<div>" + beerTag + "</div>");
                 $(beerDiv).append("<div>" + beerDescription + "</div>");
@@ -202,7 +202,7 @@ $("#submitBeer").on("click", function () {
             var foodImage = foodPic.value[0].thumbnailUrl;
             console.log(foodImage);
             var foodDiv = $("<div>");
-            $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+            $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
             $(foodDiv).append("<div>" + beerFood1 + "</div>");
             $.ajax({
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
@@ -216,7 +216,7 @@ $("#submitBeer").on("click", function () {
                 var foodImage = foodPic.value[0].thumbnailUrl;
                 console.log(foodImage);
 
-                $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
                 $(foodDiv).append("<div>" + beerFood2 + "</div>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
@@ -230,7 +230,7 @@ $("#submitBeer").on("click", function () {
                     var foodImage = foodPic.value[0].thumbnailUrl;
                     console.log(foodImage);
 
-                    $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                    $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
                     $(foodDiv).append("<div>" + beerFood3 + "</div>");
                     $("#food-view").append(foodDiv);
                 });
@@ -239,7 +239,7 @@ $("#submitBeer").on("click", function () {
 
         //display beer
         var beerDiv = $("<div>");
-        $(beerDiv).append("<img class='img-responsive img' src='" + beerImage + "'>");
+        $(beerDiv).append("<img class='img-responsive img displayImg' src='" + beerImage + "'>");
         $(beerDiv).append("<div>" + beerName + "</div>");
         $(beerDiv).append("<div>" + beerTag + "</div>");
         $(beerDiv).append("<div>" + beerDescription + "</div>");
@@ -282,7 +282,7 @@ $("#submitBeer").on("click", function () {
 
                 //display movie
                 var movieDiv = $("<div>");
-                $(movieDiv).append("<img class='img-responsive img' src='" + poster + "'>");
+                $(movieDiv).append("<img class='img-responsive img displayImg' src='" + poster + "'>");
                 $(movieDiv).append("<div>" + title + "</div>");
                 $(movieDiv).append("<div>" + actors + "</div>");
                 $(movieDiv).append("<div>" + plot + "</div>");
@@ -361,7 +361,7 @@ $("#submitFood").on("click", function () {
             var foodImage = foodPic.value[0].thumbnailUrl;
             console.log(foodImage);
             var foodDiv = $("<div>");
-            $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+            $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
             $(foodDiv).append("<div>" + beerFood1 + "</div>");
             $.ajax({
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
@@ -375,7 +375,7 @@ $("#submitFood").on("click", function () {
                 var foodImage = foodPic.value[0].thumbnailUrl;
                 console.log(foodImage);
 
-                $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
                 $(foodDiv).append("<div>" + beerFood2 + "</div>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
@@ -389,7 +389,7 @@ $("#submitFood").on("click", function () {
                     var foodImage = foodPic.value[0].thumbnailUrl;
                     console.log(foodImage);
 
-                    $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                    $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
                     $(foodDiv).append("<div>" + beerFood3 + "</div>");
                     $("#food-view").append(foodDiv);
                 });
@@ -399,7 +399,7 @@ $("#submitFood").on("click", function () {
 
         //display beer
         var beerDiv = $("<div>");
-        $(beerDiv).append("<img class='img-responsive img' src='" + beerImage + "'>");
+        $(beerDiv).append("<img class='img-responsive img displayImg' src='" + beerImage + "'>");
         $(beerDiv).append("<div>" + beerName + "</div>");
         $(beerDiv).append("<div>" + beerTag + "</div>");
         $(beerDiv).append("<div>" + beerDescription + "</div>");
@@ -441,7 +441,7 @@ $("#submitFood").on("click", function () {
 
                 //display movie
                 var movieDiv = $("<div>");
-                $(movieDiv).append("<img class='img-responsive img' src='" + poster + "'>");
+                $(movieDiv).append("<img class='img-responsive img displayImg' src='" + poster + "'>");
                 $(movieDiv).append("<div>" + title + "</div>");
                 $(movieDiv).append("<div>" + actors + "</div>");
                 $(movieDiv).append("<div>" + plot + "</div>");
@@ -509,7 +509,7 @@ function start() {
 
         //display movie
         var movieDiv = $("<div>");
-        $(movieDiv).append("<img class='img-responsive img' src='" + poster + "'>");
+        $(movieDiv).append("<img class='img-responsive img displayImg' src='" + poster + "'>");
         $(movieDiv).append("<div>" + title + "</div>");
         $(movieDiv).append("<div>" + actors + "</div>");
         $(movieDiv).append("<div>" + plot + "</div>");
@@ -552,7 +552,7 @@ function start() {
             var foodImage = foodPic.value[0].thumbnailUrl;
             console.log(foodImage);
             var foodDiv = $("<div>");
-            $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+            $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
             $(foodDiv).append("<div>" + beerFood1 + "</div>");
             $.ajax({
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
@@ -566,7 +566,7 @@ function start() {
                 var foodImage = foodPic.value[0].thumbnailUrl;
                 console.log(foodImage);
 
-                $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
                 $(foodDiv).append("<div>" + beerFood2 + "</div>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
@@ -580,7 +580,7 @@ function start() {
                     var foodImage = foodPic.value[0].thumbnailUrl;
                     console.log(foodImage);
 
-                    $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                    $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
                     $(foodDiv).append("<div>" + beerFood3 + "</div>");
                     $("#food-view").append(foodDiv);
                 });
@@ -589,7 +589,7 @@ function start() {
 
         //display beer
         var beerDiv = $("<div>");
-        $(beerDiv).append("<img class='img-responsive img' src='" + beerImage + "'>");
+        $(beerDiv).append("<img class='img-responsive img displayImg' src='" + beerImage + "'>");
         $(beerDiv).append("<div>" + beerName + "</div>");
         $(beerDiv).append("<div>" + beerTag + "</div>");
         $(beerDiv).append("<div>" + beerDescription + "</div>");

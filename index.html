@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Pair it</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Magra" rel="stylesheet">
 
 </head>
+
 <body>
     <div class="jumbotron">
         <div class="container">
@@ -21,14 +23,12 @@
                 <h2>Beer</h2>
                 <div id="form-group-beer" style="display: none;">
                     <input type="text" id="beer-input">
-                   <p></p>
+                    <p></p>
                     <input id="submitBeer" type="submit" value="Search a Beer" class="btn btn-primary">
                 </div>
             </form>
             <img class="img-description" id="img-beer" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-beer')">
-            <div class="row display">
-                <div id="beer-view"></div>
-            </div>
+            
         </div>
         <div id="movie" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 searchForm">
             <form id="movie-form" role="form">
@@ -40,9 +40,7 @@
                 </div>
             </form>
             <img class="img-description" id="img-movie" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-movie')">
-            <div class="row display">
-                <div id="movie-view"></div>
-            </div>
+            
         </div>
         <div id="food" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 searchForm">
             <form id="food-form" role="form">
@@ -54,10 +52,21 @@
                 </div>
             </form>
             <img class="img-description" id="img-food" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-food')">
-            <div class="row display">
-                <div id="food-view"></div>
-            </div>
+
         </div>
+    </div>
+    <div class="row"></div>
+    <div class="container">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 display">
+            <div id="beer-view"></div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 display">
+            <div id="movie-view"></div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 display">
+            <div id="food-view"></div>
+        </div>
+
     </div>
     <footer>
         <div id="footer" class="container">
@@ -68,4 +77,5 @@
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
+
 </html>

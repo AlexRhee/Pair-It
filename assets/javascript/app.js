@@ -3,6 +3,7 @@
 $("#submitMovie").on("click", function () {
 
     event.preventDefault();
+    localStorage.clear();
 
     //clear any previous searches
     document.getElementById("beer-form").reset();
@@ -40,6 +41,10 @@ $("#submitMovie").on("click", function () {
         $(movieDiv).append("<div>" + plot + "</div>");
         $("#movie-view").append(movieDiv);
 
+
+
+        localStorage.setItem("movie", title);
+
         console.log(ratingNumber);
 
         //using the movie rating from IMDB, searches for beer above the ABV of the movie rating
@@ -66,6 +71,11 @@ $("#submitMovie").on("click", function () {
             console.log(beerFood1);
             console.log(beerFood2);
             console.log(beerFood3);
+
+            beerId = beerChoice.id;
+
+            localStorage.setItem("beer", beerId);
+
             $.ajax({
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood1,
                 beforeSend: function (xhrObj) {
@@ -80,22 +90,50 @@ $("#submitMovie").on("click", function () {
                 var foodDiv = $("<div>");
                 $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
                 $(foodDiv).append("<div>" + beerFood1 + "</div>");
-                $(foodDiv).append("<div>" + beerFood2 + "</div>");
-                $(foodDiv).append("<div>" + beerFood3 + "</div>");
-                $("#food-view").append(foodDiv);
-            });
+                $.ajax({
+                    url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
+                    beforeSend: function (xhrObj) {
+                        // Request headers
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                    },
+                    method: "GET"
+                }).then(function (foodPic) {
+                    console.log(foodPic);
+                    var foodImage = foodPic.value[0].thumbnailUrl;
+                    console.log(foodImage);
 
-            //display beer
-            var beerDiv = $("<div>");
-            $(beerDiv).append("<img class='img-responsive img' src='" + beerImage + "'>");
-            $(beerDiv).append("<div>" + beerName + "</div>");
-            $(beerDiv).append("<div>" + beerTag + "</div>");
-            $(beerDiv).append("<div>" + beerDescription + "</div>");
-            $("#beer-view").append(beerDiv);
+                    $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                    $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                    $.ajax({
+                        url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
+                        beforeSend: function (xhrObj) {
+                            // Request headers
+                            xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                        },
+                        method: "GET"
+                    }).then(function (foodPic) {
+                        console.log(foodPic);
+                        var foodImage = foodPic.value[0].thumbnailUrl;
+                        console.log(foodImage);
 
-            //display food
+                        $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                        $(foodDiv).append("<div>" + beerFood3 + "</div>");
+                        $("#food-view").append(foodDiv);
+                    });
+                });
 
 
+                //display beer
+                var beerDiv = $("<div>");
+                $(beerDiv).append("<img class='img-responsive img' src='" + beerImage + "'>");
+                $(beerDiv).append("<div>" + beerName + "</div>");
+                $(beerDiv).append("<div>" + beerTag + "</div>");
+                $(beerDiv).append("<div>" + beerDescription + "</div>");
+                $("#beer-view").append(beerDiv);
+
+                //display food
+
+            })
         })
 
     })
@@ -107,6 +145,7 @@ $("#submitMovie").on("click", function () {
 $("#submitBeer").on("click", function () {
 
     event.preventDefault();
+    localStorage.clear();
     //clear any previous searches
     document.getElementById("movie-form").reset();
     document.getElementById("food-form").reset();
@@ -146,6 +185,11 @@ $("#submitBeer").on("click", function () {
         //pulls the year the beer was first brewed
         year = brewYear.substring(3, 7);
         console.log(year);
+
+        beerId = beerChoice.id;
+
+        localStorage.setItem("beer", beerId);
+
         $.ajax({
             url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood1,
             beforeSend: function (xhrObj) {
@@ -157,14 +201,40 @@ $("#submitBeer").on("click", function () {
             console.log(foodPic);
             var foodImage = foodPic.value[0].thumbnailUrl;
             console.log(foodImage);
-
-            //display food
             var foodDiv = $("<div>");
             $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
             $(foodDiv).append("<div>" + beerFood1 + "</div>");
-            $(foodDiv).append("<div>" + beerFood2 + "</div>");
-            $(foodDiv).append("<div>" + beerFood3 + "</div>");
-            $("#food-view").append(foodDiv);
+            $.ajax({
+                url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
+                beforeSend: function (xhrObj) {
+                    // Request headers
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                },
+                method: "GET"
+            }).then(function (foodPic) {
+                console.log(foodPic);
+                var foodImage = foodPic.value[0].thumbnailUrl;
+                console.log(foodImage);
+
+                $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                $.ajax({
+                    url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
+                    beforeSend: function (xhrObj) {
+                        // Request headers
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                    },
+                    method: "GET"
+                }).then(function (foodPic) {
+                    console.log(foodPic);
+                    var foodImage = foodPic.value[0].thumbnailUrl;
+                    console.log(foodImage);
+
+                    $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                    $(foodDiv).append("<div>" + beerFood3 + "</div>");
+                    $("#food-view").append(foodDiv);
+                });
+            });
         });
 
         //display beer
@@ -208,6 +278,8 @@ $("#submitBeer").on("click", function () {
                 console.log(poster);
                 var plot = data.Plot;
 
+                localStorage.setItem("movie", title);
+
                 //display movie
                 var movieDiv = $("<div>");
                 $(movieDiv).append("<img class='img-responsive img' src='" + poster + "'>");
@@ -233,6 +305,7 @@ $("#submitBeer").on("click", function () {
 $("#submitFood").on("click", function () {
 
     event.preventDefault();
+    localStorage.clear();
     //clear any previous searches
     document.getElementById("beer-form").reset();
     document.getElementById("movie-form").reset();
@@ -271,6 +344,11 @@ $("#submitFood").on("click", function () {
         //pulls the year the beer was first brewed
         year = brewYear.substring(3, 7);
         console.log(year);
+
+        beerId = beerChoice.id;
+
+        localStorage.setItem("beer", beerId);
+
         $.ajax({
             url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood1,
             beforeSend: function (xhrObj) {
@@ -282,14 +360,40 @@ $("#submitFood").on("click", function () {
             console.log(foodPic);
             var foodImage = foodPic.value[0].thumbnailUrl;
             console.log(foodImage);
-
-            //display food
             var foodDiv = $("<div>");
             $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
             $(foodDiv).append("<div>" + beerFood1 + "</div>");
-            $(foodDiv).append("<div>" + beerFood2 + "</div>");
-            $(foodDiv).append("<div>" + beerFood3 + "</div>");
-            $("#food-view").append(foodDiv);
+            $.ajax({
+                url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
+                beforeSend: function (xhrObj) {
+                    // Request headers
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                },
+                method: "GET"
+            }).then(function (foodPic) {
+                console.log(foodPic);
+                var foodImage = foodPic.value[0].thumbnailUrl;
+                console.log(foodImage);
+
+                $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                $.ajax({
+                    url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
+                    beforeSend: function (xhrObj) {
+                        // Request headers
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                    },
+                    method: "GET"
+                }).then(function (foodPic) {
+                    console.log(foodPic);
+                    var foodImage = foodPic.value[0].thumbnailUrl;
+                    console.log(foodImage);
+
+                    $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                    $(foodDiv).append("<div>" + beerFood3 + "</div>");
+                    $("#food-view").append(foodDiv);
+                });
+            });
 
         });
 
@@ -333,6 +437,8 @@ $("#submitFood").on("click", function () {
                 console.log(poster);
                 var plot = data.Plot;
 
+                localStorage.setItem("movie", title);
+
                 //display movie
                 var movieDiv = $("<div>");
                 $(movieDiv).append("<img class='img-responsive img' src='" + poster + "'>");
@@ -371,9 +477,127 @@ function toggleDiv(element) {
     document.getElementById("img-beer").style.display = 'none';
     document.getElementById("img-movie").style.display = 'none';
     document.getElementById("img-food").style.display = 'none';
-    
-    };
-    
+
+};
+
+
+
+
+//function to display last search using localStorage
+function start() {
+
+    var movieStorage = localStorage.getItem("movie");
+    var beerStorage = localStorage.getItem("beer");
+    var queryMovie = "https://omdbapi.com/?apikey=trilogy&t=" + movieStorage;
+
+    $.ajax({
+        url: queryMovie,
+        method: "GET"
+    }).then(function (data) {
+        console.log(data);
+        var rating = data.Ratings[0].Value;
+        // pulls the IMDB rating of the movie
+        var rawRating = rating.substring(0, 3);
+        var ratingNumber = Math.round(rawRating);
+        var title = data.Title;
+        console.log(title);
+        var actors = data.Actors;
+        console.log(actors);
+        var poster = data.Poster;
+        console.log(poster);
+        var plot = data.Plot;
+
+        //display movie
+        var movieDiv = $("<div>");
+        $(movieDiv).append("<img class='img-responsive img' src='" + poster + "'>");
+        $(movieDiv).append("<div>" + title + "</div>");
+        $(movieDiv).append("<div>" + actors + "</div>");
+        $(movieDiv).append("<div>" + plot + "</div>");
+        $("#movie-view").append(movieDiv);
+    })
+
+    var queryBeer = "https://api.punkapi.com/v2/beers?ids=" + beerStorage;
+    $.ajax({
+        url: queryBeer,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+        var beer = Math.floor(Math.random() * response.length);
+        beerChoice = response[beer];
+        console.log(beerChoice);
+        beerName = beerChoice.name;
+        console.log(beerName);
+        beerTag = beerChoice.tagline;
+        console.log(beerTag);
+        beerDescription = beerChoice.description;
+        console.log(beerDescription);
+        beerImage = beerChoice.image_url;
+        console.log(beerImage);
+        beerFood1 = beerChoice.food_pairing[0];
+        beerFood2 = beerChoice.food_pairing[1];
+        beerFood3 = beerChoice.food_pairing[2];
+        console.log(beerFood1);
+        console.log(beerFood2);
+        console.log(beerFood3);
+
+        $.ajax({
+            url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood1,
+            beforeSend: function (xhrObj) {
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+            },
+            method: "GET"
+        }).then(function (foodPic) {
+            console.log(foodPic);
+            var foodImage = foodPic.value[0].thumbnailUrl;
+            console.log(foodImage);
+            var foodDiv = $("<div>");
+            $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+            $(foodDiv).append("<div>" + beerFood1 + "</div>");
+            $.ajax({
+                url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
+                beforeSend: function (xhrObj) {
+                    // Request headers
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                },
+                method: "GET"
+            }).then(function (foodPic) {
+                console.log(foodPic);
+                var foodImage = foodPic.value[0].thumbnailUrl;
+                console.log(foodImage);
+
+                $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                $.ajax({
+                    url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
+                    beforeSend: function (xhrObj) {
+                        // Request headers
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                    },
+                    method: "GET"
+                }).then(function (foodPic) {
+                    console.log(foodPic);
+                    var foodImage = foodPic.value[0].thumbnailUrl;
+                    console.log(foodImage);
+
+                    $(foodDiv).append("<img class='img-responsive img' src='" + foodImage + "'>");
+                    $(foodDiv).append("<div>" + beerFood3 + "</div>");
+                    $("#food-view").append(foodDiv);
+                });
+            });
+        });
+
+        //display beer
+        var beerDiv = $("<div>");
+        $(beerDiv).append("<img class='img-responsive img' src='" + beerImage + "'>");
+        $(beerDiv).append("<div>" + beerName + "</div>");
+        $(beerDiv).append("<div>" + beerTag + "</div>");
+        $(beerDiv).append("<div>" + beerDescription + "</div>");
+        $("#beer-view").append(beerDiv);
+    });
+
+};
+start();
 
 
 

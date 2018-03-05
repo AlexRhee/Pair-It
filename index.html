@@ -1,83 +1,80 @@
 <!DOCTYPE html>
 <html>
-    
 <head>
     <title>Pair it</title>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+    <script language="JavaScript" type="text/javascript">
+        function toggleDiv(element) {
+            document.getElementById(element).style.display = 'block';
+            document.getElementById("img-beer").style.display = 'none';
+            document.getElementById("img-movie").style.display = 'none';
+            document.getElementById("img-food").style.display = 'none';
+            
+            
+            }
+        
+    </script>
 </head>
-
 <body>
-    
     <div class="jumbotron">
         <div class="container">
-            <h1>Pair It <p></p>Choose One:</h1>
+            <h1>Pair It
+                <p></p>Choose One:</h1>
         </div>
     </div>
-
-    
-    
     <div class="container">
-        
-         
         <div id="beer" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <form id="beer-form" role="form">
                 <h2>Beer</h2>
-                <div class="form-group">
+                <div id="form-group-beer" style="display: none;">
                     <input type="text" id="beer-input">
+                   <p></p>
+                    <input id="submitBeer" type="submit" value="Search a Beer" class="btn btn-primary">
                 </div>
-                <input id="submitBeer" type="submit" value="Search a Beer" class="btn btn-primary">
             </form>
-            <img class="img-description" src="assets/images/parrot1.jpg">
-
+            <img class="img-description" id="img-beer" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-beer')">
             <div class="row">
                 <div id="beer-view"></div>
             </div>
         </div>
-
-        
-
         <div id="movie" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <form id="movie-form" role="form">
                 <h2>Movie</h2>
-                <div class="form-group">
+                <div id="form-group-movie" style="display: none;">
                     <input type="text" id="movie-input">
+                    <p></p>
+                    <input id="submitMovie" type="submit" value="Search a Movie" class="btn btn-primary">
                 </div>
-                <input id="submitMovie" type="submit" value="Search a Movie" class="btn btn-primary">
-            </form>    
+            </form>
+            <img class="img-description" id="img-movie" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-movie')">
             <div class="row">
-                    <div id="movie-view"></div>
-                </div>
+                <div id="movie-view"></div>
+            </div>
         </div>
-        
         <div id="food" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <form id="food-form" role="form">
                 <h2>Food</h2>
-                <div class="form-group">
+                <div id="form-group-food" style="display: none;">
                     <input type="text" id="food-input">
+                    <p></p>
+                    <input id="submitFood" type="submit" value="Search a Food" class="btn btn-primary">
                 </div>
-                <input id="submitFood" type="submit" value="Search a Food" class="btn btn-primary">
-            </form>    
+            </form>
+            <img class="img-description" id="img-food" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-food')">
             <div class="row">
-                    <div id="food-view"></div>
-                </div>
+                <div id="food-view"></div>
+            </div>
         </div>
-
-
-
     </div>
-
     <footer>
         <div id="footer" class="container">
             <h3>Copyright 2018 - Pair it!</h3>
         </div>
     </footer>
-
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-
 </body>
 </html>

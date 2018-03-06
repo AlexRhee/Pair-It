@@ -97,7 +97,7 @@ $("#submitMovie").on("click", function () {
                 console.log(foodImage);
                 var foodDiv = $("<div>");
                 $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-                $(foodDiv).append("<div>" + beerFood1 + "</div>");
+                $(foodDiv).append("<div>" + beerFood1 + "</div> <br>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                     beforeSend: function (xhrObj) {
@@ -111,7 +111,7 @@ $("#submitMovie").on("click", function () {
                     console.log(foodImage);
 
                     $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-                    $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                    $(foodDiv).append("<div>" + beerFood2 + "</div> <br>");
                     $.ajax({
                         url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                         beforeSend: function (xhrObj) {
@@ -218,7 +218,7 @@ $("#submitBeer").on("click", function () {
             console.log(foodImage);
             var foodDiv = $("<div>");
             $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-            $(foodDiv).append("<div>" + beerFood1 + "</div>");
+            $(foodDiv).append("<div>" + beerFood1 + "</div> <br>");
             $.ajax({
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                 beforeSend: function (xhrObj) {
@@ -232,7 +232,7 @@ $("#submitBeer").on("click", function () {
                 console.log(foodImage);
 
                 $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-                $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                $(foodDiv).append("<div>" + beerFood2 + "</div> <br>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                     beforeSend: function (xhrObj) {
@@ -384,7 +384,7 @@ $("#submitFood").on("click", function () {
             console.log(foodImage);
             var foodDiv = $("<div>");
             $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-            $(foodDiv).append("<div>" + beerFood1 + "</div>");
+            $(foodDiv).append("<div>" + beerFood1 + "</div> <br>");
             $.ajax({
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                 beforeSend: function (xhrObj) {
@@ -398,7 +398,7 @@ $("#submitFood").on("click", function () {
                 console.log(foodImage);
 
                 $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-                $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                $(foodDiv).append("<div>" + beerFood2 + "</div> <br>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                     beforeSend: function (xhrObj) {
@@ -512,6 +512,14 @@ function start() {
     var beerStorage = localStorage.getItem("beer");
     var queryMovie = "https://omdbapi.com/?apikey=trilogy&t=" + movieStorage;
 
+    console.log(movieStorage);
+
+    if (movieStorage === null) {
+        document.getElementById("beer-view").style.display = 'none';
+    document.getElementById("movie-view").style.display = 'none';
+    document.getElementById("food-view").style.display = 'none';
+    }
+
     $.ajax({
         url: queryMovie,
         method: "GET"
@@ -575,7 +583,7 @@ function start() {
             console.log(foodImage);
             var foodDiv = $("<div>");
             $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-            $(foodDiv).append("<div>" + beerFood1 + "</div>");
+            $(foodDiv).append("<div>" + beerFood1 + "</div> <br>");
             $.ajax({
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                 beforeSend: function (xhrObj) {
@@ -589,7 +597,7 @@ function start() {
                 console.log(foodImage);
 
                 $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-                $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                $(foodDiv).append("<div>" + beerFood2 + "</div> <br>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                     beforeSend: function (xhrObj) {
@@ -636,6 +644,9 @@ $(".clear-form").on('click', function () {
     document.getElementById("beer").style.display = 'block';
     document.getElementById("movie").style.display = 'block';
     document.getElementById("food").style.display = 'block';
+    document.getElementById("titleB").style.display = 'block';
+    document.getElementById("titleM").style.display = 'block';
+    document.getElementById("titleF").style.display = 'block';
 
     console.log("hello");
     localStorage.clear();
@@ -649,6 +660,9 @@ function toggleDiv(element) {
     document.getElementById("img-beer").style.display = 'none';
     document.getElementById("img-movie").style.display = 'none';
     document.getElementById("img-food").style.display = 'none';
+    document.getElementById("titleB").style.display = 'none';
+    document.getElementById("titleM").style.display = 'none';
+    document.getElementById("titleF").style.display = 'none';
 }
 function reset() {
     document.getElementById("img-beer").style.display = 'block';
@@ -659,6 +673,7 @@ function reset() {
 $(".clear-form").on('click', function () {
     console.log(this)
 });
+
 
 
 

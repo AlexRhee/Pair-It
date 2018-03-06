@@ -5,21 +5,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Magra" rel="stylesheet">
 
 </head>
+
 <body>
+
     <div class="jumbotron">
         <div class="container">
-            <h1>Pair It
-                <p></p>Choose One:</h1>
-                <p><center><button class="clear-form">Reset</button></center></p>
+            <img class="logo" src="assets/images/Pair_it_logo_2b.png">
+                <h2>Trust the Parrot</h2>
+                <h4>Select either Movie, Beer, or Food <br>get the pairing to enhance your experience</h4>
         </div>
     </div>
+
     <div class="container">
+        <center><button id="newSearch"class="clear-form btn btn-xs btn-danger"><span id="glow">New Search</span></button></center>
+        <p></p>
+
         <div id="reset-form">
         </div>
         <div id="beer" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <h2>Beer</h2>
+            <h1 id="titleB">Beer</h1>
             <form class="beer-reset" id="beer-form" role="form">
                 <div id="form-group-beer" style="display: none;">
                     <input type="text" id="beer-input">
@@ -31,9 +38,11 @@
             <img class="img-description" id="img-beer" src="assets/images/parrot1.jpg" style="width:282.5px;height:200px" onclick="toggleDiv('form-group-beer')">
             
         </div>
+
+
         <div id="movie" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <form id="movie-form" role="form">
-                <h2>Movie</h2>
+                <h1 id="titleM">Movie</h1>
                 <div id="form-group-movie" style="display: none;">
                     <input type="text" id="movie-input">
                     <p></p>
@@ -46,11 +55,12 @@
         </div>
         <div id="food" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <form id="food-form" role="form">
-                <h2>Food</h2>
+                <h1 id="titleF">Food</h1>
                 <div id="form-group-food" style="display: none;">
                     <input type="text" id="food-input">
                     <p></p>
                     <input id="submitFood" type="submit" value="Search a Food" class="btn btn-primary">
+                    <br>
                     <input type="button" value="Clear Results" class="clear-form">
                 </div>
             </form>
@@ -60,7 +70,7 @@
     </div>
     <div class="container ">
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 result" id="beer-view"></div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 result" id="movie-view"><input type="button" value="Clear Results" class="clear-form"></div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 result" id="movie-view"></div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 result" id="food-view"></div>
     </div>
     <footer>

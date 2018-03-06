@@ -512,6 +512,14 @@ function start() {
     var beerStorage = localStorage.getItem("beer");
     var queryMovie = "https://omdbapi.com/?apikey=trilogy&t=" + movieStorage;
 
+    console.log(movieStorage);
+
+    if (movieStorage === null) {
+        document.getElementById("beer-view").style.display = 'none';
+    document.getElementById("movie-view").style.display = 'none';
+    document.getElementById("food-view").style.display = 'none';
+    }
+
     $.ajax({
         url: queryMovie,
         method: "GET"
@@ -636,6 +644,9 @@ $(".clear-form").on('click', function () {
     document.getElementById("beer").style.display = 'block';
     document.getElementById("movie").style.display = 'block';
     document.getElementById("food").style.display = 'block';
+    document.getElementById("titleB").style.display = 'block';
+    document.getElementById("titleM").style.display = 'block';
+    document.getElementById("titleF").style.display = 'block';
 
     console.log("hello");
     localStorage.clear();
@@ -649,6 +660,9 @@ function toggleDiv(element) {
     document.getElementById("img-beer").style.display = 'none';
     document.getElementById("img-movie").style.display = 'none';
     document.getElementById("img-food").style.display = 'none';
+    document.getElementById("titleB").style.display = 'none';
+    document.getElementById("titleM").style.display = 'none';
+    document.getElementById("titleF").style.display = 'none';
 }
 function reset() {
     document.getElementById("img-beer").style.display = 'block';
@@ -659,6 +673,7 @@ function reset() {
 $(".clear-form").on('click', function () {
     console.log(this)
 });
+
 
 
 

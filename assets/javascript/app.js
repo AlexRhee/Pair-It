@@ -97,7 +97,7 @@ $("#submitMovie").on("click", function () {
                 console.log(foodImage);
                 var foodDiv = $("<div>");
                 $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-                $(foodDiv).append("<div>" + beerFood1 + "</div>");
+                $(foodDiv).append("<div>" + beerFood1 + "</div> <br>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                     beforeSend: function (xhrObj) {
@@ -111,7 +111,7 @@ $("#submitMovie").on("click", function () {
                     console.log(foodImage);
 
                     $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-                    $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                    $(foodDiv).append("<div>" + beerFood2 + "</div> <br>");
                     $.ajax({
                         url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                         beforeSend: function (xhrObj) {
@@ -218,7 +218,7 @@ $("#submitBeer").on("click", function () {
             console.log(foodImage);
             var foodDiv = $("<div>");
             $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-            $(foodDiv).append("<div>" + beerFood1 + "</div>");
+            $(foodDiv).append("<div>" + beerFood1 + "</div> <br>");
             $.ajax({
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                 beforeSend: function (xhrObj) {
@@ -232,7 +232,7 @@ $("#submitBeer").on("click", function () {
                 console.log(foodImage);
 
                 $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-                $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                $(foodDiv).append("<div>" + beerFood2 + "</div> <br>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                     beforeSend: function (xhrObj) {
@@ -384,7 +384,7 @@ $("#submitFood").on("click", function () {
             console.log(foodImage);
             var foodDiv = $("<div>");
             $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-            $(foodDiv).append("<div>" + beerFood1 + "</div>");
+            $(foodDiv).append("<div>" + beerFood1 + "</div> <br>");
             $.ajax({
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                 beforeSend: function (xhrObj) {
@@ -398,7 +398,7 @@ $("#submitFood").on("click", function () {
                 console.log(foodImage);
 
                 $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-                $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                $(foodDiv).append("<div>" + beerFood2 + "</div> <br>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                     beforeSend: function (xhrObj) {
@@ -575,7 +575,7 @@ function start() {
             console.log(foodImage);
             var foodDiv = $("<div>");
             $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-            $(foodDiv).append("<div>" + beerFood1 + "</div>");
+            $(foodDiv).append("<div>" + beerFood1 + "</div> <br>");
             $.ajax({
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                 beforeSend: function (xhrObj) {
@@ -589,7 +589,7 @@ function start() {
                 console.log(foodImage);
 
                 $(foodDiv).append("<img class='img-responsive img displayImg foodImg' src='" + foodImage + "'>");
-                $(foodDiv).append("<div>" + beerFood2 + "</div>");
+                $(foodDiv).append("<div>" + beerFood2 + "</div> <br>");
                 $.ajax({
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                     beforeSend: function (xhrObj) {

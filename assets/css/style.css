@@ -124,6 +124,10 @@ body {
     background-color: rgb(255, 0, 191);
 }
 
+#beer, #movie, #food {
+    display: none;
+}
+
 
 
 .btn {
@@ -200,7 +204,7 @@ body {
 #beer-view, #movie-view, #food-view {
     height: auto;
     background-color: rgb(162, 250, 75);
-    display: none;
+    display: block;
     padding: 10px;
     font-weight: bold;
 

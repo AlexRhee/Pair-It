@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Pair it</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Magra" rel="stylesheet">
 
 </head>
-
 <body>
     <div class="jumbotron">
         <div class="container">
@@ -18,55 +15,54 @@
         </div>
     </div>
     <div class="container">
-        <div id="beer" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 searchForm">
-            <form id="beer-form" role="form">
-                <h2>Beer</h2>
+        <div id="reset-form">
+        </div>
+        <a href="#" id="refresh">click</a>
+        <div id="beer" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <h2>Beer</h2>
+            <form class="beer-reset" id="beer-form" role="form">
                 <div id="form-group-beer" style="display: none;">
                     <input type="text" id="beer-input">
                     <p></p>
                     <input id="submitBeer" type="submit" value="Search a Beer" class="btn btn-primary">
+                    <input class="clear-form" type="button" value="Clear Results">
                 </div>
             </form>
-            <img class="img-description" id="img-beer" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-beer')">
-            
+            <img class="img-description" id="img-beer" src="assets/images/parrot1.jpg" style="width:282.5px;height:200px" onclick="toggleDiv('form-group-beer')">
+            <div class="row">
+                <div id="beer-view"></div>
+            </div>
         </div>
-        <div id="movie" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 searchForm">
+        <div id="movie" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <form id="movie-form" role="form">
                 <h2>Movie</h2>
                 <div id="form-group-movie" style="display: none;">
                     <input type="text" id="movie-input">
                     <p></p>
                     <input id="submitMovie" type="submit" value="Search a Movie" class="btn btn-primary">
+                    <input type="button" value="Clear Results" class="clear-form">
                 </div>
             </form>
-            <img class="img-description" id="img-movie" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-movie')">
-            
+            <img class="img-description" id="img-movie" src="assets/images/parrot1.jpg" style="width:282.5px;height:200px" onclick="toggleDiv('form-group-movie')">
+            <div class="row">
+                <div id="movie-view"></div>
+            </div>
         </div>
-        <div id="food" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 searchForm">
+        <div id="food" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <form id="food-form" role="form">
                 <h2>Food</h2>
                 <div id="form-group-food" style="display: none;">
                     <input type="text" id="food-input">
                     <p></p>
                     <input id="submitFood" type="submit" value="Search a Food" class="btn btn-primary">
+                    <input type="button" value="Clear Results" class="clear-form">
                 </div>
             </form>
-            <img class="img-description" id="img-food" src="assets/images/parrot1.jpg" onclick="toggleDiv('form-group-food')">
-
+            <img class="img-description" id="img-food" src="assets/images/parrot1.jpg" style="width:282.5px;height:200px" onclick="toggleDiv('form-group-food')">
+            <div class="row">
+                <div id="food-view"></div>
+            </div>
         </div>
-    </div>
-    <div class="row"></div>
-    <div style="text-align: center" class="container">
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 display">
-            <div id="beer-view"></div>
-        </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 display">
-            <div id="movie-view"></div>
-        </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 display">
-            <div id="food-view"></div>
-        </div>
-
     </div>
     <footer>
         <div id="footer" class="container">
@@ -76,6 +72,8 @@
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script>
+        
+    </script>
 </body>
-
 </html>

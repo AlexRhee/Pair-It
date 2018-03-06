@@ -599,6 +599,39 @@ function start() {
 };
 start();
 
+$(".clear-form").on('click', function () {
+    document.getElementById("img-beer").style.display = 'block';
+    document.getElementById("img-movie").style.display = 'block';
+    document.getElementById("img-food").style.display = 'block';
+    document.getElementById("form-group-beer").style.display = 'none';
+    document.getElementById("form-group-movie").style.display = 'none';
+    document.getElementById("form-group-food").style.display = 'none';
+
+    console.log(this);
+    $("input[type=text], textarea").val("");
+    console.log("hello");
+    localStorage.clear();
+    $("#movie-view").empty();
+    $("#beer-view").empty();
+    $("#food-view").empty();
+});
+
+function toggleDiv(element) {
+    document.getElementById(element).style.display = 'block';
+    document.getElementById("img-beer").style.display = 'none';
+    document.getElementById("img-movie").style.display = 'none';
+    document.getElementById("img-food").style.display = 'none';
+}
+function reset() {
+    document.getElementById("img-beer").style.display = 'block';
+    document.getElementById("img-movie").style.display = 'block';
+    document.getElementById("img-food").style.display = 'block';
+    console.log("reset")
+}
+$(".clear-form").on('click', function () {
+    console.log(this)
+});
+
 
 
 

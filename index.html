@@ -12,12 +12,12 @@
         <div class="container">
             <h1>Pair It
                 <p></p>Choose One:</h1>
+                <p><center><button class="clear-form">Reset</button></center></p>
         </div>
     </div>
     <div class="container">
         <div id="reset-form">
         </div>
-        <a href="#" id="refresh">click</a>
         <div id="beer" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <h2>Beer</h2>
             <form class="beer-reset" id="beer-form" role="form">
@@ -29,9 +29,7 @@
                 </div>
             </form>
             <img class="img-description" id="img-beer" src="assets/images/parrot1.jpg" style="width:282.5px;height:200px" onclick="toggleDiv('form-group-beer')">
-            <div class="row">
-                <div id="beer-view"></div>
-            </div>
+            
         </div>
         <div id="movie" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <form id="movie-form" role="form">
@@ -44,9 +42,7 @@
                 </div>
             </form>
             <img class="img-description" id="img-movie" src="assets/images/parrot1.jpg" style="width:282.5px;height:200px" onclick="toggleDiv('form-group-movie')">
-            <div class="row">
-                <div id="movie-view"></div>
-            </div>
+            
         </div>
         <div id="food" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <form id="food-form" role="form">
@@ -59,10 +55,13 @@
                 </div>
             </form>
             <img class="img-description" id="img-food" src="assets/images/parrot1.jpg" style="width:282.5px;height:200px" onclick="toggleDiv('form-group-food')">
-            <div class="row">
-                <div id="food-view"></div>
-            </div>
+            
         </div>
+    </div>
+    <div class="container ">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 result" id="beer-view"></div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 result" id="movie-view"><input type="button" value="Clear Results" class="clear-form"></div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 result" id="food-view"></div>
     </div>
     <footer>
         <div id="footer" class="container">

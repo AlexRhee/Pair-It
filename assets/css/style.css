@@ -190,3 +190,17 @@ body {
     width: auto;
 	height: 75px;
 }
+
+
+
+#beer-view {
+    margin-left: 10%;
+}
+
+#beer-view, #movie-view, #food-view {
+    height: auto;
+    background-color: rgb(162, 250, 75);
+    display: none;
+    padding: 10px;
+
+}

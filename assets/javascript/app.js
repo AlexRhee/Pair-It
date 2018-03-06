@@ -1,6 +1,12 @@
 
 // search by movie
 $("#submitMovie").on("click", function () {
+    document.getElementById("beer-view").style.display = 'block';
+    document.getElementById("movie-view").style.display = 'block';
+    document.getElementById("food-view").style.display = 'block';
+    document.getElementById("beer").style.display = 'none';
+    document.getElementById("movie").style.display = 'none';
+    document.getElementById("food").style.display = 'none';
 
     event.preventDefault();
     localStorage.clear();
@@ -36,10 +42,12 @@ $("#submitMovie").on("click", function () {
         //display movie
         var movieDiv = $("<div>");
         $(movieDiv).append("<img class='img-responsive img displayImg' src='" + poster + "'>");
-        $(movieDiv).append("<div>" + title + "</div>");
-        $(movieDiv).append("<div>" + actors + "</div>");
+        $(movieDiv).append("<div> <h3>" + title + "</h3> </div>");
+        $(movieDiv).append("<div>" + actors + "</div> <br>");
         $(movieDiv).append("<div>" + plot + "</div>");
         $("#movie-view").append(movieDiv);
+        document.getElementById("movie-view").style.height = 'auto';
+
 
 
 
@@ -126,8 +134,8 @@ $("#submitMovie").on("click", function () {
                 //display beer
                 var beerDiv = $("<div>");
                 $(beerDiv).append("<img class='img-responsive img displayImg' src='" + beerImage + "'>");
-                $(beerDiv).append("<div>" + beerName + "</div>");
-                $(beerDiv).append("<div>" + beerTag + "</div>");
+                $(beerDiv).append("<div> <h3>" + beerName + "</h3> </div>");
+                $(beerDiv).append("<div>" + beerTag + "</div> <br>");
                 $(beerDiv).append("<div>" + beerDescription + "</div>");
                 $("#beer-view").append(beerDiv);
 
@@ -143,6 +151,10 @@ $("#submitMovie").on("click", function () {
 
 //search by beer
 $("#submitBeer").on("click", function () {
+
+    document.getElementById("beer-view").style.display = 'block';
+    document.getElementById("movie-view").style.display = 'block';
+    document.getElementById("food-view").style.display = 'block';
 
     event.preventDefault();
     localStorage.clear();
@@ -240,8 +252,8 @@ $("#submitBeer").on("click", function () {
         //display beer
         var beerDiv = $("<div>");
         $(beerDiv).append("<img class='img-responsive img displayImg' src='" + beerImage + "'>");
-        $(beerDiv).append("<div>" + beerName + "</div>");
-        $(beerDiv).append("<div>" + beerTag + "</div>");
+        $(beerDiv).append("<div> <h3>" + beerName + "</h3> </div>");
+        $(beerDiv).append("<div>" + beerTag + "</div> <br>");
         $(beerDiv).append("<div>" + beerDescription + "</div>");
         $("#beer-view").append(beerDiv);
 
@@ -283,8 +295,8 @@ $("#submitBeer").on("click", function () {
                 //display movie
                 var movieDiv = $("<div>");
                 $(movieDiv).append("<img class='img-responsive img displayImg' src='" + poster + "'>");
-                $(movieDiv).append("<div>" + title + "</div>");
-                $(movieDiv).append("<div>" + actors + "</div>");
+                $(movieDiv).append("<div> <h3>" + title + "</h3> </div>");
+                $(movieDiv).append("<div>" + actors + "</div> <br>");
                 $(movieDiv).append("<div>" + plot + "</div>");
                 $("#movie-view").append(movieDiv);
 
@@ -303,6 +315,10 @@ $("#submitBeer").on("click", function () {
 
 //search by food
 $("#submitFood").on("click", function () {
+
+    document.getElementById("beer-view").style.display = 'block';
+    document.getElementById("movie-view").style.display = 'block';
+    document.getElementById("food-view").style.display = 'block';
 
     event.preventDefault();
     localStorage.clear();
@@ -400,8 +416,8 @@ $("#submitFood").on("click", function () {
         //display beer
         var beerDiv = $("<div>");
         $(beerDiv).append("<img class='img-responsive img displayImg' src='" + beerImage + "'>");
-        $(beerDiv).append("<div>" + beerName + "</div>");
-        $(beerDiv).append("<div>" + beerTag + "</div>");
+        $(beerDiv).append("<div> <h3>" + beerName + "</h3> </div>");
+        $(beerDiv).append("<div>" + beerTag + "</div> <br>");
         $(beerDiv).append("<div>" + beerDescription + "</div>");
         $("#beer-view").append(beerDiv);
 
@@ -442,8 +458,8 @@ $("#submitFood").on("click", function () {
                 //display movie
                 var movieDiv = $("<div>");
                 $(movieDiv).append("<img class='img-responsive img displayImg' src='" + poster + "'>");
-                $(movieDiv).append("<div>" + title + "</div>");
-                $(movieDiv).append("<div>" + actors + "</div>");
+                $(movieDiv).append("<div> <h3>" + title + "</h3> </div>");
+                $(movieDiv).append("<div>" + actors + "</div> <br>");
                 $(movieDiv).append("<div>" + plot + "</div>");
                 $("#movie-view").append(movieDiv);
 
@@ -606,9 +622,15 @@ $(".clear-form").on('click', function () {
     document.getElementById("form-group-beer").style.display = 'none';
     document.getElementById("form-group-movie").style.display = 'none';
     document.getElementById("form-group-food").style.display = 'none';
-
-    console.log(this);
     $("input[type=text], textarea").val("");
+    console.log(this);
+    document.getElementById("beer-view").style.display = 'none';
+    document.getElementById("movie-view").style.display = 'none';
+    document.getElementById("food-view").style.display = 'none';
+    document.getElementById("beer").style.display = 'block';
+    document.getElementById("movie").style.display = 'block';
+    document.getElementById("food").style.display = 'block';
+
     console.log("hello");
     localStorage.clear();
     $("#movie-view").empty();

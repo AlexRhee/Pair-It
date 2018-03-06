@@ -155,6 +155,9 @@ $("#submitBeer").on("click", function () {
     document.getElementById("beer-view").style.display = 'block';
     document.getElementById("movie-view").style.display = 'block';
     document.getElementById("food-view").style.display = 'block';
+    document.getElementById("beer").style.display = 'none';
+    document.getElementById("movie").style.display = 'none';
+    document.getElementById("food").style.display = 'none';
 
     event.preventDefault();
     localStorage.clear();
@@ -319,6 +322,9 @@ $("#submitFood").on("click", function () {
     document.getElementById("beer-view").style.display = 'block';
     document.getElementById("movie-view").style.display = 'block';
     document.getElementById("food-view").style.display = 'block';
+    document.getElementById("beer").style.display = 'none';
+    document.getElementById("movie").style.display = 'none';
+    document.getElementById("food").style.display = 'none';
 
     event.preventDefault();
     localStorage.clear();

@@ -27,6 +27,14 @@ $("#submitMovie").on("click", function () {
         method: "GET"
     }).then(function (data) {
         console.log(data);
+        console.log(data.Response)
+        //search fail alert
+        if (data.Response === "False") {
+            document.getElementById("beer-view").style.display = 'none';
+            document.getElementById("movie-view").style.display = 'none';
+            document.getElementById("food-view").style.display = 'none';
+            alert("Search Failed. Please Try Again.")
+        };
         var rating = data.Ratings[0].Value;
         // pulls the IMDB rating of the movie
         var rawRating = rating.substring(0, 3);
@@ -38,6 +46,8 @@ $("#submitMovie").on("click", function () {
         var poster = data.Poster;
         console.log(poster);
         var plot = data.Plot;
+
+
 
         //display movie
         var movieDiv = $("<div>");
@@ -177,6 +187,13 @@ $("#submitBeer").on("click", function () {
         method: "GET"
     }).then(function (response) {
         console.log(response);
+        // search fail alert
+        if (response.length === 0) {
+            document.getElementById("beer-view").style.display = 'none';
+            document.getElementById("movie-view").style.display = 'none';
+            document.getElementById("food-view").style.display = 'none';
+            alert("Search Failed. Please Try Again.")
+        };
         //pulls a random beer from the beer search results
         var beer = Math.floor(Math.random() * response.length);
         beerChoice = response[beer];
@@ -344,6 +361,13 @@ $("#submitFood").on("click", function () {
         method: "GET"
     }).then(function (response) {
         console.log(response);
+        //search fail alert
+        if (response.length === 0) {
+            document.getElementById("beer-view").style.display = 'none';
+            document.getElementById("movie-view").style.display = 'none';
+            document.getElementById("food-view").style.display = 'none';
+            alert("Search Failed. Please Try Again.")
+        };
         var beer = Math.floor(Math.random() * response.length);
         beerChoice = response[beer];
         console.log(beerChoice);
@@ -516,8 +540,8 @@ function start() {
 
     if (movieStorage === null) {
         document.getElementById("beer-view").style.display = 'none';
-    document.getElementById("movie-view").style.display = 'none';
-    document.getElementById("food-view").style.display = 'none';
+        document.getElementById("movie-view").style.display = 'none';
+        document.getElementById("food-view").style.display = 'none';
     }
 
     $.ajax({

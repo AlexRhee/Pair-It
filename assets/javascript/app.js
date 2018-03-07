@@ -39,6 +39,10 @@ $("#submitMovie").on("click", function () {
         console.log(poster);
         var plot = data.Plot;
 
+        if (data === "null"){
+            alert("Search Failed. Click New Search to Try Again.")
+        }
+
         //display movie
         var movieDiv = $("<div>");
         $(movieDiv).append("<img class='img-responsive img displayImg' src='" + poster + "'>");

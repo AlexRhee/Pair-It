@@ -564,8 +564,8 @@ function start() {
         //display movie
         var movieDiv = $("<div>");
         $(movieDiv).append("<img class='img-responsive img displayImg' src='" + poster + "'>");
-        $(movieDiv).append("<div>" + title + "</div>");
-        $(movieDiv).append("<div>" + actors + "</div>");
+        $(movieDiv).append("<div> <h3>" + title + "</h3> </div> <br>");
+        $(movieDiv).append("<div>" + actors + "</div> <br>");
         $(movieDiv).append("<div>" + plot + "</div>");
         $("#movie-view").append(movieDiv);
     })
@@ -644,8 +644,8 @@ function start() {
         //display beer
         var beerDiv = $("<div>");
         $(beerDiv).append("<img class='img-responsive img displayImg' src='" + beerImage + "'>");
-        $(beerDiv).append("<div>" + beerName + "</div>");
-        $(beerDiv).append("<div>" + beerTag + "</div>");
+        $(beerDiv).append("<div> <h3>" + beerName + "</h3> </div> <br>");
+        $(beerDiv).append("<div>" + beerTag + "</div> <br>");
         $(beerDiv).append("<div>" + beerDescription + "</div>");
         $("#beer-view").append(beerDiv);
     });

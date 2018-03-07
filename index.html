@@ -14,8 +14,7 @@
     <div class="jumbotron">
         <div class="container">
             <img class="logo" src="assets/images/Pair_it_logo_2b.png">
-                <h2>Trust the Parrot</h2>
-                <h4>Select either Movie, Beer, or Food <br>get the pairing to enhance your experience</h4>
+                <h4>Click 'New Search' to begin<br>Select either Beer, Movie, or Food <br>Find the pairing to enhance your experience</h4>
         </div>
     </div>
 
@@ -32,10 +31,12 @@
                     <input type="text" id="beer-input">
                     <p></p>
                     <input id="submitBeer" type="submit" value="Search a Beer" class="btn btn-primary">
-                    <input class="clear-form" type="button" value="Clear Results">
+                    <br>
+                    <br>
+                    <input id="clearResults" class="clear-form" type="button" value="Clear Selection">
                 </div>
             </form>
-            <img class="img-description" id="img-beer" src="assets/images/parrot1.jpg" style="max-width: auto; height: 100%;" onclick="toggleDiv('form-group-beer')">
+            <img class="img-description" id="img-beer" src="assets/images/Beer_parrot.jpg" style="max-width: auto; height: 100%" onclick="toggleDiv('form-group-beer')">
             
         </div>
 
@@ -47,10 +48,12 @@
                     <input type="text" id="movie-input">
                     <p></p>
                     <input id="submitMovie" type="submit" value="Search a Movie" class="btn btn-primary">
-                    <input type="button" value="Clear Results" class="clear-form">
+                    <br>
+                    <br>
+                    <input id="clearResults" type="button" value="Clear Selection" class="clear-form">
                 </div>
             </form>
-            <img class="img-description" id="img-movie" src="assets/images/parrot1.jpg" style="max-width: auto; height: 100%;" onclick="toggleDiv('form-group-movie')">
+            <img class="img-description" id="img-movie" src="assets/images/Jack_parrot.jpeg" style="max-width: auto; height: 100%" onclick="toggleDiv('form-group-movie')">
             
         </div>
         <div id="food" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -60,18 +63,25 @@
                     <input type="text" id="food-input">
                     <p></p>
                     <input id="submitFood" type="submit" value="Search a Food" class="btn btn-primary">
-                    <input type="button" value="Clear Results" class="clear-form">
+                    <br>
+                    <br>
+                    <input id="clearResults" type="button" value="Clear Selection" class="clear-form">
                 </div>
             </form>
-            <img class="img-description" id="img-food" src="assets/images/parrot1.jpg" style="max-width: auto; height: 100%;" onclick="toggleDiv('form-group-food')">
+            <img class="img-description" id="img-food" src="assets/images/Pizza_parrot.jpg" style="max-width: auto; height: 100%" onclick="toggleDiv('form-group-food')">
             
         </div>
     </div>
-    <div class="container ">
+    <div class="container">
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 result" id="beer-view"></div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 result" id="movie-view"></div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 result" id="food-view"></div>
+        <img class="logo2" src="assets/images/trust_the_parrot.png">
+
     </div>
+
+
+
     <footer>
         <div id="footer" class="container">
             <h3>Copyright 2018 - Pair it!</h3>

@@ -10,29 +10,43 @@ body {
     height: 300px;
 }
 #glow {
-    text-shadow: -4px -4px 20px 4px rgb(235, 238, 61), 8px -8px 20px 0 whitesmoke, -4px 8px 20px 4px rgba(221, 218, 60, 0.493);
+    text-shadow: 0;
 
 }
 #newSearch {
     margin-left: 2%;
     margin-bottom: 20px;
     text-align: center;
-    border: 1px solid white;
-    font-size: 25px;
-    box-shadow: -4px -4px 20px 4px rgb(235, 238, 61), 8px -8px 20px 0 whitesmoke, -4px 8px 20px 4px rgba(221, 218, 60, 0.493);
+    font-size: 50px;
+    
     border-radius: 8px;
     border: none;
     border-style: none;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     background-color: Transparent;
-            background-repeat:no-repeat;
-            
-            cursor:pointer;
-            overflow: hidden;
-
+    -webkit-animation:colorchange 10s infinite alternate;
+      
 }
-.clear-form {
-    margin-left: 5%;
+
+@-webkit-keyframes colorchange {
+  25% {
+    color: white;
+  }
+
+  50% {
+    color: rgb(26, 65, 240);
+  }
+
+  75% {
+    color: rgb(225, 248, 19);
+  }
+
+  100% {
+    color: rgb(255, 0, 212);
+  }
+}
+
+#clearResults {
+    margin-left: 0;
     margin-bottom: 20px;
     text-align: center;
     border: 1px solid white;
@@ -46,10 +60,13 @@ h2 {
    margin-top: -20px;
    color: white;
    margin-left: 2%;
+
 }
 
 h4 {
     margin-left: 2%;
+    font-size: 25px;
+    font-style: bold;
 }
 .logo {
 	height: 250px;
@@ -227,9 +244,11 @@ h1 {
 }
 
 .displayImg {
-    height: 250px;
+    width: auto;
+    max-height: 417px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 8px;
     
 }
 
@@ -243,9 +262,39 @@ h1 {
 
 #beer-view, #movie-view, #food-view {
     height: auto;
-    background-color: rgb(162, 250, 75);
+    background-color: white;
     display: block;
-    padding: 10px;
+    padding: 0px;
     font-weight: bold;
+    border: none;
+    
 
+
+}
+#food-view {
+    background-color: transparent;
+    font-style: bold;
+    padding-top: 20px;
+    box-shadow: none;
+    padding-bottom: 10px;
+    font-size: 15px;
+
+
+}
+
+#food-view .displayImg  {
+    height: 150px;
+    display: block;
+    padding: 0px;
+    font-weight: bold;
+    border-radius: 50%;
+    border: 1px solid white;
+    box-shadow: 2px 3px 10px 3px whitesmoke; 
+    margin-bottom: 15px;
+
+}
+.logo2 {
+    margin-top: -25px;
+    float: right;
+	transform: rotate(-15deg);
 }

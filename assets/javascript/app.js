@@ -112,7 +112,7 @@ $("#submitMovie").on("click", function () {
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                     beforeSend: function (xhrObj) {
                         // Request headers
-                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
                     },
                     method: "GET"
                 }).then(function (foodPic) {
@@ -126,7 +126,7 @@ $("#submitMovie").on("click", function () {
                         url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                         beforeSend: function (xhrObj) {
                             // Request headers
-                            xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                            xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
                         },
                         method: "GET"
                     }).then(function (foodPic) {
@@ -226,7 +226,7 @@ $("#submitBeer").on("click", function () {
             url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood1,
             beforeSend: function (xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
             },
             method: "GET"
         }).then(function (foodPic) {
@@ -240,7 +240,7 @@ $("#submitBeer").on("click", function () {
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                 beforeSend: function (xhrObj) {
                     // Request headers
-                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
                 },
                 method: "GET"
             }).then(function (foodPic) {
@@ -254,7 +254,7 @@ $("#submitBeer").on("click", function () {
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                     beforeSend: function (xhrObj) {
                         // Request headers
-                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
                     },
                     method: "GET"
                 }).then(function (foodPic) {
@@ -399,7 +399,7 @@ $("#submitFood").on("click", function () {
             url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood1,
             beforeSend: function (xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
             },
             method: "GET"
         }).then(function (foodPic) {
@@ -413,7 +413,7 @@ $("#submitFood").on("click", function () {
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                 beforeSend: function (xhrObj) {
                     // Request headers
-                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
                 },
                 method: "GET"
             }).then(function (foodPic) {
@@ -427,7 +427,7 @@ $("#submitFood").on("click", function () {
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                     beforeSend: function (xhrObj) {
                         // Request headers
-                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
                     },
                     method: "GET"
                 }).then(function (foodPic) {
@@ -598,7 +598,7 @@ function start() {
             url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood1,
             beforeSend: function (xhrObj) {
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
             },
             method: "GET"
         }).then(function (foodPic) {
@@ -612,7 +612,7 @@ function start() {
                 url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood2,
                 beforeSend: function (xhrObj) {
                     // Request headers
-                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
                 },
                 method: "GET"
             }).then(function (foodPic) {
@@ -626,7 +626,7 @@ function start() {
                     url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?&count=1&offset=0&mkt=en-us&safeSearch=Moderate&q=" + beerFood3,
                     beforeSend: function (xhrObj) {
                         // Request headers
-                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "922a8834782c497881bebd5df8ba77d1");
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "90e3516944ed4a09aab93fc49ab5826e");
                     },
                     method: "GET"
                 }).then(function (foodPic) {
